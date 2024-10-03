@@ -2,7 +2,6 @@ import random
 
 numbers = []
 
-for i in range(10):
-    numbers.append(random.randint(0,10))
+numbers = [random.randint(-10, 10) for i in range(10)]
 
 print(numbers)
