@@ -47,8 +47,3 @@ class FuelUI:
 
 if __name__ == "__main__": #Started das program nur wenn es direkt gestartet wird und nicht importiert wird
     FuelUI()
-
-# fuelcalculator = FuelCalculator(1000, 60)
-
-# print(f"Der durchschnittliche Verbrauch beträgt {fuelcalculator.get_avg_consumption_l():.2f} l/100km")
-# print(fuelcalculator)
