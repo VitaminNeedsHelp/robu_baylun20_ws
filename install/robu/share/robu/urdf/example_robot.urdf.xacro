@@ -111,8 +111,9 @@
 
     <link name="grip">
         <visual>
-            <origin xyz="0.25 0 0"/>
+            <origin xyz="-0.1 0.2 -0.52" rpy="0 1.5708 0"/>
             <geometry>
+                <mesh filename="package://robu/meshes/Hand.stl" scale="0.005 0.005 0.005"/>
                 <box size="0.5 0.5 0.05" />
             </geometry>
             <material name="white" />
