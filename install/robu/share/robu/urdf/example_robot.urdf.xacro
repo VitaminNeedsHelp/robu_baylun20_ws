@@ -35,6 +35,12 @@
             </geometry>
             <material name="grey" />
         </visual>
+        <collision>
+            <origin xyz="0.15 2.875 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="2 5.75 1.8"/>
+            </geometry>
+        </collision>
     </link>
 
 
@@ -77,6 +83,12 @@
             </geometry>
             <material name="orange" />
         </visual>
+        <collision>
+            <origin xyz="1.45 -0.01 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="3.5 0.75 1.5"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="l2_to_l1" type="revolute">
@@ -97,6 +109,12 @@
             </geometry>
             <material name="orange" />
         </visual>
+        <collision>
+            <origin xyz="1.2 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="3 0.7 0.4"/>
+            </geometry>
+        </collision>
     </link>
 
 
@@ -118,25 +136,11 @@
             </geometry>
             <material name="white" />
         </visual>
-    </link>
-
-
-
-    <joint name="world_to_camera" type="fixed">
-        <parent link="world" />
-        <child link="camera" />
-        <origin  rpy="-2 0 2.5" xyz="4 1 2" />
-    </joint>
-
-    <link name="camera">
-        <visual>
-            <origin xyz="0 0 -0.2"/>
+        <collision>
+            <origin xyz="0 0 -0.3" rpy="0 0 0"/>
             <geometry>
-                <box size="0.2 0.2 0.4" />
+                <box size="0.4 0.6 0.6"/>
             </geometry>
-            <material name="blue" />
-        </visual>
+        </collision>
     </link>
-
-
 </robot>
