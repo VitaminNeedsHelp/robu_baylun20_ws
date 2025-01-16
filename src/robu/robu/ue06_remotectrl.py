@@ -95,7 +95,7 @@ def main():
                     vel.linear.x -= LIN_VEL_STEP_SIZE
                     if vel.linear.x < -MAX_LIN_VEL:
                         vel.linear.x = -MAX_LIN_VEL
-                        node.get_logger().info("Backward-Velocity at minimum")
+                        node.get_logger().info("Backward-Velocity at maximum")
                 elif key == "\x1b[C":
                     print("Right")
                     vel.angular.z -= ANG_VEL_STEP_SIZE
