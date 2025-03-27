@@ -25,6 +25,10 @@ setup(
     entry_points={
         'console_scripts': [
             "remotectrl = robu.ue06_remotectrl:main",
+            "ledpub = robu.plf_pub:main",
+            "ledsub = robu.plf_sub:main",
+            "distance_sensor = robu.ue08_distance:main_distance_sensor",
+            "obstacle_avoidance = robu.ue08_distance:main_obstacle_avoidance",
         ],
     },
 )

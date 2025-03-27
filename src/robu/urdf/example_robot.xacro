@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+<xacro:include filename="macros.xacro" />
 
     <material name="grey">
         <color rgba="0.2 0.2 0.2 1"/>
@@ -30,7 +31,7 @@
         <visual>
             <origin xyz="0.15 2.8 0" rpy="0 0 4.712"/>
             <geometry>
-                <mesh filename="package://robu/meshes/Basis.stl" scale="0.005 0.005 0.005"/>
+                <mesh filename="package://robu/models/Basis.stl" scale="0.005 0.005 0.005"/>
                 <box size="5 0.1 3" />
             </geometry>
             <material name="grey" />
@@ -57,7 +58,7 @@
         <visual>
             <origin xyz="-0.025 0 0" rpy="1.5708 1.5708 0"/>
             <geometry>
-                <mesh filename="package://robu/meshes/Schulter.stl" scale="0.005 0.005 0.005"/>
+                <mesh filename="package://robu/models/Schulter.stl" scale="0.005 0.005 0.005"/>
                 <cylinder length="1.5" radius="0.04" />
             </geometry>
             <material name="orange" />
@@ -78,7 +79,7 @@
         <visual>
             <origin xyz="4.38 0.055 -2.35" rpy="0 1.57 -1.57"/>
             <geometry>
-                <mesh filename="package://robu/meshes/Oberarm.stl" scale="0.005 0.005 0.005"/>
+                <mesh filename="package://robu/models/Oberarm.stl" scale="0.005 0.005 0.005"/>
                 <cylinder length="1.5" radius="0.04" />
             </geometry>
             <material name="orange" />
@@ -104,7 +105,7 @@
         <visual>
             <origin xyz="1.143 -0.06 0" rpy="0 1.57 -1.57"/>
             <geometry>
-                <mesh filename="package://robu/meshes/Unterarm.stl" scale="0.005 0.005 0.005"/>
+                <mesh filename="package://robu/models/Unterarm.stl" scale="0.005 0.005 0.005"/>
                 <cylinder length="1" radius="0.04" />
             </geometry>
             <material name="orange" />
@@ -131,7 +132,7 @@
         <visual>
             <origin xyz="-0.1 0.2 -0.52" rpy="0 1.5708 0"/>
             <geometry>
-                <mesh filename="package://robu/meshes/Hand.stl" scale="0.005 0.005 0.005"/>
+                <mesh filename="package://robu/models/Hand.stl" scale="0.005 0.005 0.005"/>
                 <box size="0.5 0.5 0.05" />
             </geometry>
             <material name="white" />

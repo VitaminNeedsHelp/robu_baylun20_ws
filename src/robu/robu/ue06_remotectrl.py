@@ -59,7 +59,7 @@ def main():
     qos = QoSProfile(depth=10) #Quality of Service Profile with a queue depth of 10 messages
     
     node = rclpy.create_node('remotectrl') #Create a ROS2 node with the name 'remotectrl'
-    pub = node.create_publisher(Twist, 'turtle1/cmd_vel', qos) #Create a publisher for the topic 'cmd_vel' with the message type Twist  
+    pub = node.create_publisher(Twist, 'cmd_vel', qos) #Create a publisher for the topic 'cmd_vel' with the message type Twist  
 
     vel = Twist()
 
