@@ -20,6 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            "temp_sensor=temp_monitor_demo.temp_sensor_node:main",
+            "temp_monitor=temp_monitor_demo.temp_monitor_node:main"
         ],
     },
 )

@@ -16,8 +16,12 @@ class TempSensorNode(Node):
         self._mean = self.get_parameter('mean').get_parameter_value().double_value
         self._amp = self.get_parameter('amp').get_parameter_value().double_value
 
+        self.add_on_set_parameters_callback(self._on_param_cb)
 
         self._timer = self.create_timer(1.0 / self._hz, self._timer_temp_cb)
+
+    def _on_param_cb(self, params):
+        self.get_logger().info("Parameteränderung erkannt!")
 
     def _timer_temp_cb(self):
         val = Float32()
