@@ -1,7 +1,8 @@
+from glob import glob
 import os
 from setuptools import find_packages, setup
-from glob import glob
-package_name = 'robu'
+
+package_name = 'camera_to_world_tf'
 
 setup(
     name=package_name,
@@ -13,7 +14,6 @@ setup(
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'launch'), glob('launch/*launch.py')),
         (os.path.join('share', package_name, 'urdf'), glob('urdf/*.*')),
-        (os.path.join('share', package_name, 'meshes'), glob('meshes/*.*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -24,12 +24,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "remotectrl = robu.ue06_remotectrl:main",
-            "ledpub = robu.plf_pub:main",
-            "ledsub = robu.plf_sub:main",
-            "distance_sensor = robu.ue08_distance:main_distance_sensor",
-            "obstacle_avoidance = robu.ue08_distance:main_obstacle_avoidance",
-            "simple_kinematics = robu.ue09_turtlesim_simple_kinematics:main",
+            'camera_to_world_tf = camera_to_world_tf.camera_to_world:main',
         ],
     },
 )
