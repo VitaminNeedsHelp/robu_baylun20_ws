@@ -33,7 +33,7 @@ class TempMonitorNode(Node):
         if val_temp > self.get_parameter("threshold").get_parameter_value().double_value:
             self.get_logger().warn(f"Temperaturwert ist zu hoch: {val_temp:.2f}")
             str_alert = String()
-            str_alert.data = "Temperature ALERT"
+            str_alert.data = "Temperaturalarm! Aktuelle Temperatur: {:.2f}".format(val_temp)
             self._pub_temperature_alert.publish(str_alert)
 
     def destroy_node(self):

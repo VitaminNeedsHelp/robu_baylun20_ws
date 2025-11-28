@@ -29,6 +29,8 @@ class TempSensorNode(Node):
             if p.name == "hz":
                 self._hz = p.value
                 self.get_logger().info(f"Hz wurde auf {self._hz} gesetzt")
+                self._timer_temperature.cancel()
+                self._timer_temperature = self.create_timer(1.0/self._hz, self._timer_temperature_cb)
             elif p.name == "mean":
                 self._mean = p.value
                 self.get_logger().info(f"Mean wurde auf {self._mean} gesetzt")
