@@ -1,0 +1,41 @@
+{
+    "ROS2.distro": "jazzy",
+    "python.autoComplete.extraPaths": [
+        "/home/robu/work/microros_ws/install/micro_ros_msgs/lib/python3.12/site-packages",
+        "/home/robu/work/turtlebot3_ws/build/turtlebot3_teleop",
+        "/home/robu/work/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.12/site-packages",
+        "/home/robu/work/turtlebot3_ws/build/turtlebot3_example",
+        "/home/robu/work/turtlebot3_ws/install/turtlebot3_example/lib/python3.12/site-packages",
+        "/home/robu/work/turtlebot3_ws/install/turtlebot3_msgs/lib/python3.12/site-packages",
+        "/home/robu/work/.robu/build/ssd1306",
+        "/home/robu/work/.robu/install/ssd1306/lib/python3.12/site-packages",
+        "/home/robu/work/.robu/build/robuboard",
+        "/home/robu/work/.robu/install/robuboard/lib/python3.12/site-packages",
+        "/home/robu/work/.robu/build/robu_rpi_examples",
+        "/home/robu/work/.robu/install/robu_rpi_examples/lib/python3.12/site-packages",
+        "/home/robu/work/.robu/build/neopixel",
+        "/home/robu/work/.robu/install/neopixel/lib/python3.12/site-packages",
+        "/home/robu/work/.robu/build/dynamixel_utils",
+        "/home/robu/work/.robu/install/dynamixel_utils/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/robu/work/microros_ws/install/micro_ros_msgs/lib/python3.12/site-packages",
+        "/home/robu/work/turtlebot3_ws/build/turtlebot3_teleop",
+        "/home/robu/work/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.12/site-packages",
+        "/home/robu/work/turtlebot3_ws/build/turtlebot3_example",
+        "/home/robu/work/turtlebot3_ws/install/turtlebot3_example/lib/python3.12/site-packages",
+        "/home/robu/work/turtlebot3_ws/install/turtlebot3_msgs/lib/python3.12/site-packages",
+        "/home/robu/work/.robu/build/ssd1306",
+        "/home/robu/work/.robu/install/ssd1306/lib/python3.12/site-packages",
+        "/home/robu/work/.robu/build/robuboard",
+        "/home/robu/work/.robu/install/robuboard/lib/python3.12/site-packages",
+        "/home/robu/work/.robu/build/robu_rpi_examples",
+        "/home/robu/work/.robu/install/robu_rpi_examples/lib/python3.12/site-packages",
+        "/home/robu/work/.robu/build/neopixel",
+        "/home/robu/work/.robu/install/neopixel/lib/python3.12/site-packages",
+        "/home/robu/work/.robu/build/dynamixel_utils",
+        "/home/robu/work/.robu/install/dynamixel_utils/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ]
+}
