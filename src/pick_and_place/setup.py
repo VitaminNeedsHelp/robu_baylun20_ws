@@ -14,12 +14,18 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='robu',
-    maintainer_email='baylun20@htl-kaindorf.at',
+    maintainer_email='li@htl-kaindorf.at',
     description='TODO: Package description',
     license='TODO: License declaration',
-    tests_require=['pytest'],
+    extras_require={
+        'test': [
+            'pytest',
+        ],
+    },
     entry_points={
         'console_scripts': [
+            'pap=pick_and_place.pick_and_place_node:main',
+            'pap_sensor_gui=pick_and_place.pap_demo_gui_node:main',
         ],
     },
 )

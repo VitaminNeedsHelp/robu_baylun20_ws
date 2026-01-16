@@ -1,39 +1,35 @@
 from __future__ import annotations
-
 from abc import ABC, abstractmethod
 
 
 class State(ABC):
-    """Abstrakte Basisklasse für alle Zustände der State-Machine."""
+    """Basisklasse für alle Zustände der State-Machine."""
 
-    def __init__(self, name: str):
+    def __init__(self, name: str) -> None:
         self.name = name
 
     def on_enter(self, node) -> None:
-        """Eingangsaktion - wird einmalig beim Eintritt in den Zustand ausgeführt."""
+        """Wird einmalig beim Eintritt in den Zustand ausgeführt."""
         pass
 
     def on_exit(self, node) -> None:
-        """Ausgangsaktion - wird einmalig beim Verlassen des Zustands ausgeführt."""
+        """Wird einmalig beim Verlassen des Zustands ausgeführt."""
         pass
 
     @abstractmethod
     def tick(self, node) -> str | None:
         """
-        Zustandsaktion + Übergangslogik.
-        Wird zyklisch (im Timer) aufgerufen.
-
-        Rückgabe:
-            - None       → im aktuellen Zustand bleiben
-            - "STATE_X"  → Übergang zu STATE_X
+        Wird zyklisch aufgerufen.
+        Muss entweder None (im Zustand bleiben)
+        oder den Namen des nächsten States zurückgeben.
         """
         ...
 
 
 class StateMachine:
-    """Einfache State-Machine, die States verwaltet und Übergänge ausführt."""
+    """Verwalten der States + Ablaufsteuerung."""
 
-    def __init__(self, node):
+    def __init__(self, node) -> None:
         self._node = node
         self._states: dict[str, State] = {}
         self._current_state: State | None = None
@@ -47,7 +43,7 @@ class StateMachine:
         self._current_state.on_enter(self._node)
 
     def step(self) -> None:
-        """Ein Tick der State-Machine - z.B. aus einem ROS2-Timer aufgerufen."""
+        """Soll aus dem ROS2-Timer aufgerufen werden."""
         if self._current_state is None:
             return
 
@@ -57,10 +53,11 @@ class StateMachine:
             # Ausgangsaktion
             self._current_state.on_exit(self._node)
 
-            old_name = self._current_state.name
+            old = self._current_state.name
             self._current_state = self._states[next_name]
+
             self._node.get_logger().info(
-                f"Zustandswechsel: {old_name} → {next_name}"
+                f"Zustandswechsel: {old} → {next_name}"
             )
 
             # Eingangsaktion

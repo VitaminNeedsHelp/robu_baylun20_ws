@@ -4,8 +4,12 @@
   <name>pick_and_place</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="baylun20@htl-kaindorf.at">robu</maintainer>
+  <maintainer email="li@htl-kaindorf.at">robu</maintainer>
   <license>TODO: License declaration</license>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
