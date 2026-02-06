@@ -6,7 +6,7 @@ from launch.conditions import UnlessCondition, IfCondition
 
 
 def generate_launch_description():
-    
+
     use_sim_time_arg = DeclareLaunchArgument(
         "use_sim_time",
         default_value="True",
@@ -23,7 +23,7 @@ def generate_launch_description():
         "wheel_separation",
         default_value="0.18",
     )
-    
+
     use_sim_time = LaunchConfiguration("use_sim_time")
     use_simple_controller = LaunchConfiguration("use_simple_controller")
     wheel_radius = LaunchConfiguration("wheel_radius")
@@ -39,28 +39,28 @@ def generate_launch_description():
         ],
     )
 
-
     diff_drive_controller = GroupAction(
         condition=UnlessCondition(use_simple_controller),
         actions=[
             Node(
                 package="controller_manager",
                 executable="spawner",
-                arguments=["diff_drive_controller", 
-                        "--controller-manager", 
-                        "/controller_manager"
-                ]
+                arguments=[
+                    "diff_drive_controller",
+                    "--controller-manager",
+                    "/controller_manager",
+                ],
             ),
-            Node(
-                package="awdbot_controller",
-                executable="diffdrive_config_controller",
-                name="diffdrivectrl",
-                parameters=[
-                    {"wheel_radius": wheel_radius,
-                    "wheel_separation": wheel_separation,
-                    "use_sim_time": use_sim_time}]
-            )
-        ]
+            # Node(
+            #     package="awdbot_controller",
+            #     executable="diffdrive_config_controller",
+            #     name="diffdrivectrl",
+            #     parameters=[
+            #         {"wheel_radius": wheel_radius,
+            #         "wheel_separation": wheel_separation,
+            #         "use_sim_time": use_sim_time}]
+            # )
+        ],
     )
 
     simple_controller = GroupAction(
@@ -69,21 +69,25 @@ def generate_launch_description():
             Node(
                 package="controller_manager",
                 executable="spawner",
-                arguments=["velocity_controllers", 
-                        "--controller-manager", 
-                        "/controller_manager"
-                ]
+                arguments=[
+                    "velocity_controllers",
+                    "--controller-manager",
+                    "/controller_manager",
+                ],
             ),
             Node(
                 package="awdbot_controller",
                 executable="velocity_controllers",
                 name="diffdrivectrl",
                 parameters=[
-                    {"wheel_radius": wheel_radius,
-                    "wheel_separation": wheel_separation,
-                    "use_sim_time": use_sim_time}]
-            )
-        ]
+                    {
+                        "wheel_radius": wheel_radius,
+                        "wheel_separation": wheel_separation,
+                        "use_sim_time": use_sim_time,
+                    }
+                ],
+            ),
+        ],
     )
 
     return LaunchDescription(
